@@ -425,7 +425,6 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
-	background-color: blue;
 }
 .main-navigation ul {
 	list-style: none;
@@ -607,7 +606,7 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-.site-content {
+body {
 	max-width: 1000px;
 	margin: auto;
 }
