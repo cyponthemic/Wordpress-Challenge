@@ -621,7 +621,7 @@ body {
 .site-branding h2 {
 	margin-bottom: 20px;
 }
-.site-content h1{
+.entry-title {
 	width: 300px;
 	height: 300px;
 	border-radius: 50%;
