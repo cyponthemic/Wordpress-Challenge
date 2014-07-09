@@ -38,8 +38,21 @@ function alexchavet_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
-
+	add_theme_support( 'post-thumbnails' );
+	
+	add_filter( 'the_post', 'include_post_thumbnail' );
+	
+	function include_post_thumbnail() {
+	if ( has_post_thumbnail() ) {
+	the_post_thumbnail('medium');
+	} 
+	}
+	
+	
+	add_filter( 'the_content_more_link', 'modify_read_more_link' );
+	function modify_read_more_link() {
+		return '<a class="more-link" href="' . get_permalink() . '">Read more & see the gallery</a>';
+		}
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'alexchavet' ),
@@ -82,8 +95,8 @@ function alexchavet_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'alexchavet_widgets_init' );

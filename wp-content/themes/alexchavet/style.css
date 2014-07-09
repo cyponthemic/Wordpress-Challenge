@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-	font-family: quicksandbold,sans-serif;
+	font-family: quicksandregular,sans-serif;
 	font-size:42px;
 }
 
@@ -418,6 +418,13 @@ a:active {
 	color: midnightblue;
 }
 
+.more-link{
+	padding: 10px;
+	border: 1px black dashed;
+	background: white;
+	color: black;
+}
+
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
@@ -425,8 +432,10 @@ a:active {
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+	width: 150px;
 	position: fixed;
+	z-index: 90;
+	top: 130px;
 	left: 50px;
 }
 .main-navigation ul {
@@ -615,30 +624,66 @@ body {
 	margin: auto;
 }
 */
+
+/* post-5 : home */
+
 .site-branding{
 	border-bottom: 1px solid black;
 }
 .site-branding h2 {
 	margin-bottom: 20px;
 }
-.entry-title {
-	width: 300px;
-	height: 300px;
+.type-page >.entry-header {
+	font-family: monospace;
+	letter-spacing: 4px;
+	width: 250px;
+	height: 250px;
 	border-radius: 50%;
 	color: white;
-	background: url('http://www.hdbackgroundpoint.com/wp-content/uploads/2014/01/21/newyork-1-t5-city.jpg');
+	text-transform: uppercase;
+	background: url('img/images/H1-BG_01.png');
 	text-align: center;
-	padding-top: 110px;
+	line-height: 250px;
 	margin: auto;
 }
-.site-content,
+
 .site-branding{
+	display: none;
+}
+
+.widget-area,
+.content-area
+{
 	max-width: 800px;
 	margin-left: 200px;
 	background: white;
 	padding: 40px;
 	
 }
+
+.widget-area{
+	margin-left: 0px;
+	padding: 40px 40px 40px 240px;
+	border-top: 1px solid black;
+	min-width: 100%;
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+	background-image: url('http://www.absoluteanime.com/!bin/skin3/bg/bg-white-stripes.png');
+	position: relative;
+	z-index: 99;
+	-webkit-box-shadow: 0px -31px 39px white;
+    -moz-box-shadow: 0px -31px 39px white;
+        box-shadow: 0px -31px 39px white;
+	
+	
+}
+.widget-area li,
+.widget-area ul {
+	list-style: none !important;
+	margin-left: 0px;
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -676,6 +721,9 @@ body {
 /*--------------------------------------------------------------
 10.3 Comments
 --------------------------------------------------------------*/
+#comments{
+	display: none;
+}
 .comment-content a {
 	word-wrap: break-word;
 }
